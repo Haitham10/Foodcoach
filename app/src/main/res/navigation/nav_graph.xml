@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.FoodCoash.home.view.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home_">
+        <action
+            android:id="@+id/action_homeFragment_to_mealDetailsFragment"
+            app:destination="@id/mealDetailsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_categoryFragment"
+            app:destination="@id/categoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mealDetailsFragment"
+        android:name="com.example.FoodCoash.mealdetail.view.MealDetailsFragment"
+        android:label="Meal Details"
+        tools:layout="@layout/fragment_meal_details" >
+        <argument
+            android:name="no"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoryFragment"
+        android:name="com.example.FoodCoash.categories.view.CategoryFragment"
+        android:label="Category"
+        tools:layout="@layout/fragment_category">
+        <action
+            android:id="@+id/action_categoryFragment_to_listDetailFragment"
+            app:destination="@id/listDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.example.FoodCoash.favorite.view.FavoriteFragment"
+        android:label="Favorite"
+        tools:layout="@layout/fragment_favorite">
+        <action
+            android:id="@+id/action_favoriteFragment_to_mealDetailsFragment"
+            app:destination="@id/mealDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/calenderFragment"
+        android:name="com.example.FoodCoash.foodplane.view.PlanFragment"
+        android:label="Calender"
+        tools:layout="@layout/fragment_calender">
+        <action
+            android:id="@+id/action_calenderFragment_to_listDetailFragment"
+            app:destination="@id/listDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listDetailFragment"
+        android:name="com.example.FoodCoash.listsdetail.view.ListDetailFragment"
+        android:label="Meals" />
+</navigation>
